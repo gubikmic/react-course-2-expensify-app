@@ -1,0 +1,47 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "runtimeExecutable": "/Applications/Chromium.app/Contents/MacOS/Chromium",
+      "runtimeArgs": [
+        "--remote-debugging-port 9222"
+      ],
+      "name": "Launch Chrome against localhost",
+      "url": "http://localhost:8080",
+      "userDataDir": "${workspaceRoot}/.vscode/chrome",
+      "webRoot": "${workspaceFolder}/src",
+      "sourceMaps": true,
+      "sourceMapPathOverrides": { "webpack:///./*": "${webRoot}/*" }
+    },
+    {
+      "name": "Launch Chromium against localhost, with sourcemaps",
+      "type": "chrome",
+      "request": "launch",
+      "runtimeExecutable": "/Applications/Chromium.app/Contents/MacOS/Chromium",
+      "runtimeArgs": [
+        "--remote-debugging-port 9222"
+      ],
+      "url": "http://localhost:8080",
+      // This forces chrome to run a brand new instance, allowing existing
+      // chrome windows to stay open.
+      "userDataDir": "${workspaceRoot}/.vscode/chrome",
+      "sourceMaps": true,
+      "webRoot": "${workspaceFolder}/src",
+      //"diagnosticLogging": true,
+      "sourceMapPathOverrides": { "webpack:///./*": "${webRoot}/*" }
+  },
+  {
+      "name": "Attach to Chromium, with sourcemaps",
+      "type": "chrome",
+      "request": "attach",
+      "url": "http://localhost:8080",
+      "port": 9222,
+      "sourceMaps": true,
+      "webRoot": "${workspaceFolder}/src",
+      "sourceMapPathOverrides": { "webpack:///./*": "${webRoot}/*" }
+  }
+
+  ]
+}

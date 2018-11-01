@@ -10,7 +10,6 @@ exports[`should render ExpenseListItem with expense 1`] = `
       Gum
     </Link>
   </h3>
-  $
   $1.95
    - date: 
   January 1st, 1970
