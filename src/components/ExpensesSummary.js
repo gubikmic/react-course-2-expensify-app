@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import numeral from 'numeral'
 import selectExpenses from '../selectors/expenses'
+import getExpensesTotal from '../selectors/expenses-total'
 
 export class ExpensesSummary extends React.Component {
   render() {
@@ -18,7 +19,7 @@ const mapStateToProps = (state, props) => {
   const visibleExpenses = selectExpenses(state.expenses, state.filters)
   return {
     expenseCount: visibleExpenses.length,
-    expensesTotal: visibleExpenses.map( (expense) => expense.amount ).reduce((a, b) => a + b, 0)
+    expensesTotal: getExpensesTotal(visibleExpenses)
   }
 }
 
