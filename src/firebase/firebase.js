@@ -14,6 +14,15 @@ const database = firebase.database()
 
 export { firebase, database as default }
 
+database.ref('expenses/-LQXmHh7-rL7kO0NBm_5').update({
+  'description': 'guap'
+})
+
+// database.ref('expenses/-LQXlIZop51xPU3DuW_Z')
+//   .once('value')
+//   .then((snapshot) => {
+//     console.log(snapshot.val())
+//   })
 
 // // child_removed
 // database.ref('expenses').on('child_removed', (snapshot) => {
