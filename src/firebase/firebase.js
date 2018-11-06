@@ -15,10 +15,6 @@ const googleAuthProvider = new firebase.auth.GoogleAuthProvider()
 
 export { firebase, googleAuthProvider, database as default }
 
-database.ref('expenses/-LQXmHh7-rL7kO0NBm_5').update({
-  'description': 'guap'
-})
-
 // database.ref('expenses/-LQXlIZop51xPU3DuW_Z')
 //   .once('value')
 //   .then((snapshot) => {
